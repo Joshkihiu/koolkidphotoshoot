@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koolkid Photoshoot & Edits - Professional Photography | Nairobi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Background with blur */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Images/i7.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            filter: blur(80px) brightness(0.3);
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8b5cf6;
+            border-radius: 4px;
+        }
+
+        /* Icons */
+        .icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .icon-lg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .icon-xl {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .whatsapp-nav {
+            background: #25D366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .whatsapp-nav:hover {
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 100px 5% 50px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.15), transparent 50%),
+                        radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1), transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 30px;
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .price-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 12px 20px;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #8b5cf6;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-image {
+            position: relative;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            font-weight: 600;
+            animation: float 3s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-1 {
+            top: 20px;
+            right: 20px;
+        }
+
+        .badge-2 {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 5%;
+            background: transparent;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #a78bfa;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.02);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay span {
+            font-size: 12px;
+            color: #a78bfa;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 5%;
+            background: transparent;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 35px 25px;
+            border-radius: 16px;
+            transition: all 0.3s;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .price-card:hover {
+            border-color: rgba(139, 92, 246, 0.5);
+            transform: translateY(-5px);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .price-card.featured {
+            border-color: rgba(139, 92, 246, 0.4);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .price-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #8b5cf6;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .price-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 42px;
+            font-weight: 900;
+            color: #8b5cf6;
+            margin: 15px 0;
+            line-height: 1;
+        }
+
+        .price-duration {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .price-features li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkmark {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 5%;
+            background: transparent;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .qr-container {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .qr-container h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .qr-code {
+            background: #fff;
+            padding: 20px;
+            border-radius: 16px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+            display: block;
+        }
+
+        .qr-container p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 5% 30px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #8b5cf6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 30px;
+                gap: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-card {
+                padding: 30px 20px;
+            }
+
+            .contact-info {
+                padding: 30px;
+            }
+
+            .logo span {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 2L7.17 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4H16.83L15 2H9M12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7M12 9C10.35 9 9 10.35 9 12C9 13.65 10.35 15 12 15C13.65 15 15 13.65 15 12C15 10.35 13.65 9 12 9Z"/>
+                </svg>
+            </div>
+            <span>Koolkid Photoshoot & Edits</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="https://wa.me/254114113788?text=Hey!%20I%20want%20to%20book%20a%20session" class="whatsapp-nav">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            WhatsApp
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Professional<br><span class="gradient-text">Photography</span><br>& Editing</h1>
+                <p>From portraits to events, capturing life around Nairobi with creativity and precision. Real shots, real stories.</p>
+                <div class="price-tag">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7,10L12,15L17,10H7Z"/>
+                    </svg>
+                    From KSh 50/photo
+                </div>
+                <div class="cta-buttons">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M6,20H15L18,20V12L14,16L12,14L6,20M8,9A2,2 0 0,0 6,11A2,2 0 0,0 8,13A2,2 0 0,0 10,11A2,2 0 0,0 8,9Z"/>
+                        </svg>
+                        View Work
+                    </a>
+                    <a href="#pricing" class="btn btn-secondary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
+                        </svg>
+                        See Packages
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Images/i14.jpg" alt="Professional Photography">
+                <div class="floating-badge badge-1">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 2L7.17 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4H16.83L15 2H9M12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7Z"/>
+                    </svg>
+                    Canon EOS
+                </div>
+                <div class="floating-badge badge-2">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"/>
+                    </svg>
+                    Pro Editing
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="section-header">
+            <div class="section-tag">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z"/>
+                </svg>
+                Portfolio
+            </div>
+            <h2>Recent Work</h2>
+            <p>Real shots from around Nairobi</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="Images/i1.jpg" alt="Urban Photography">
+                <div class="portfolio-overlay">
+                    <span>Urban</span>
+                    <h3>City Life</h3>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="Images/i2.jpg" alt="Architecture">
+                <div class="portfolio-overlay">
+                    <span>Architecture</span>
+                    <h3>Twin Towers</h3>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="Images/i3.jpg" alt="Street Art">
+                <div class="portfolio-overlay">
+                    <span>Street Art</span>
+                    <h3>Urban Colors</h3>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="Images/i4.jpg" alt="Food Photography">
+                <div class="portfolio-overlay">
+                    <span>Lifestyle</span>
+                    <h3>Dining</h3>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="Images/i6.jpg" alt="Street Style">
+                <div class="portfolio-overlay">
+                    <span>Fashion</span>
+                    <h3>Street Style</h3>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="Images/i7.jpg" alt="Architecture">
+                <div class="portfolio-overlay">
+                    <span>Architecture</span>
+                    <h3>Modern Nairobi</h3>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="Images/i8.jpg" alt="Creative Shot">
+                <div class="portfolio-overlay">
+                    <span>Creative</span>
+                    <h3>Angles</h3>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="Images/i9.jpg" alt="Poolside">
+                <div class="portfolio-overlay">
+                    <span>Lifestyle</span>
+                    <h3>Poolside</h3>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="Images/i10.jpg" alt="Night Photography">
+                <div class="portfolio-overlay">
+                    <span>Night</span>
+                    <h3>After Dark</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <div class="section-tag">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"/>
+                </svg>
+                Pricing
+            </div>
+            <h2>Packages</h2>
+            <p>Choose what works for you</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Single Shot</h3>
+                <div class="price">KSh 50</div>
+                <div class="price-duration">Per photo</div>
+                <ul class="price-features">
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        1 Photo
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Basic Edit
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Digital File
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Same Day
+                    </li>
+                </ul>
+                <a href="https://wa.me/254114113788?text=I%20want%20the%20Single%20Shot%20package" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Triple Pack</h3>
+                <div class="price">KSh 100</div>
+                <div class="price-duration">3 photos</div>
+                <ul class="price-features">
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        3 Photos
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Enhanced Edit
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Multiple Poses
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Digital Files
+                    </li>
+                </ul>
+                <a href="https://wa.me/254114113788?text=I%20want%20the%20Triple%20Pack" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
+            </div>
+
+            <div class="price-card featured">
+                <div class="price-badge">Popular</div>
+                <h3>Half Day</h3>
+                <div class="price">KSh 500</div>
+                <div class="price-duration">4 hours</div>
+                <ul class="price-features">
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        4 Hour Session
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Unlimited Shots
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Pro Editing
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Any Location
+                    </li>
+                </ul>
+                <a href="https://wa.me/254114113788?text=I%20want%20the%20Half%20Day%20session" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
+            </div>
+
+            <div class="price-card featured">
+                <div class="price-badge">Best Deal</div>
+                <h3>Full Session</h3>
+                <div class="price">KSh 1000</div>
+                <div class="price-duration">6 hours</div>
+                <ul class="price-features">
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        6 Hour Session
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Groups & Events
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Premium Edit
+                    </li>
+                    <li>
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        Multiple Spots
+                    </li>
+                </ul>
+                <a href="https://wa.me/254114113788?text=I%20want%20the%20Full%20Session" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <div class="section-tag">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                </svg>
+                Contact
+            </div>
+            <h2>Let's Shoot</h2>
+            <p>Ready when you are</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Hit me up on WhatsApp</h3>
+                <p>Quick responses, easy booking. Let's talk about your shoot - whether it's portraits, events, or just vibing around the city. Based in Nairobi, shooting everywhere.</p>
+                <a href="https://wa.me/254114113788?text=Hey!%20I%20want%20to%20book%20a%20session" class="whatsapp-btn">
+                    <svg class="icon-lg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    Message Me
+                </a>
+            </div>
+            <div class="qr-container">
+                <h4>Scan to Connect</h4>
+                <div class="qr-code">
+                    <img src="Images/qr.jpeg" alt="WhatsApp QR Code">
+                </div>
+                <p>Instant WhatsApp</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Koolkid Photoshoot & Edits</h3>
+                <p>Professional photography and editing services in Nairobi. Capturing real moments, real stories. Canon shooter, creative editor, city explorer.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://wa.me/254114113788">WhatsApp</a></li>
+                    <li><a href="tel:+254114113788">0114 113 788</a></li>
+                    <li><a href="#contact">Nairobi, Kenya</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Koolkid Photoshoot & Edits. Nairobi, Kenya.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.portfolio-item, .price-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
