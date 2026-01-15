@@ -19,35 +19,6 @@
             color: #fff;
             overflow-x: hidden;
             line-height: 1.6;
-            position: relative;
-        }
-
-        /* Background with blur */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('Images/i7.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            filter: blur(80px) brightness(0.3);
-            z-index: -1;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: -1;
         }
 
         ::-webkit-scrollbar {
@@ -55,7 +26,7 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.3);
+            background: #000;
         }
 
         ::-webkit-scrollbar-thumb {
@@ -167,7 +138,7 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero Section - GLASSY BACKGROUND */
         .hero {
             min-height: 100vh;
             padding: 100px 5% 50px;
@@ -177,11 +148,40 @@
             overflow: hidden;
         }
 
+        /* Hero background - MORE VISIBLE with less blur */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Images/i5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(25px) brightness(0.5);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            z-index: 0;
+        }
+
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.15), transparent 50%),
-                        radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1), transparent 50%);
+            background: radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.2), transparent 50%),
+                        radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.15), transparent 50%);
+            z-index: 1;
         }
 
         .hero-content {
@@ -192,7 +192,7 @@
             gap: 60px;
             align-items: center;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .hero-text h1 {
@@ -201,6 +201,7 @@
             line-height: 0.95;
             margin-bottom: 20px;
             letter-spacing: -2px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         .gradient-text {
@@ -212,18 +213,20 @@
 
         .hero-text p {
             font-size: 18px;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 30px;
             max-width: 500px;
             line-height: 1.7;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .price-tag {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(139, 92, 246, 0.15);
-            border: 1px solid rgba(139, 92, 246, 0.3);
+            background: rgba(139, 92, 246, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.4);
             padding: 12px 20px;
             border-radius: 30px;
             margin-bottom: 30px;
@@ -256,16 +259,18 @@
         .btn-primary:hover {
             background: #7c3aed;
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .hero-image {
@@ -274,6 +279,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .hero-image img {
@@ -284,11 +290,11 @@
 
         .floating-badge {
             position: absolute;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(20px);
             padding: 15px 20px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             font-size: 14px;
             font-weight: 600;
             animation: float 3s ease-in-out infinite;
@@ -791,7 +797,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="Images/i4.jpg" alt="Professional Photography">
+                <img src="Images/i14.jpg" alt="Professional Photography">
                 <div class="floating-badge badge-1">
                     <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 2L7.17 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4H16.83L15 2H9M12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7Z"/>
@@ -928,7 +934,7 @@
                         Same Day
                     </li>
                 </ul>
-                <a href="https://wa.me/254114113788?text=I%20want%20the%20Single%20Shot%20package" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
+                <a href="https://wa.me/p/25895223313407620/254114113788" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
             </div>
 
             <div class="price-card">
@@ -961,7 +967,7 @@
                         Digital Files
                     </li>
                 </ul>
-                <a href="https://wa.me/254114113788?text=I%20want%20the%20Triple%20Pack" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
+                <a href="https://wa.me/p/25733816566234819/254114113788" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
             </div>
 
             <div class="price-card featured">
@@ -995,7 +1001,7 @@
                         Any Location
                     </li>
                 </ul>
-                <a href="https://wa.me/254114113788?text=I%20want%20the%20Half%20Day%20session" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
+                <a href="https://wa.me/p/26522817953986564/254114113788" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
             </div>
 
             <div class="price-card featured">
@@ -1029,7 +1035,7 @@
                         Multiple Spots
                     </li>
                 </ul>
-                <a href="https://wa.me/254114113788?text=I%20want%20the%20Full%20Session" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
+                <a href="https://wa.me/p/YOUR_FULL_SESSION_ID/254114113788" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
             </div>
         </div>
     </section>
